@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "2.0.0",
+  "nodes": [
+    {
+      "id": "npcDialog_questGiver",
+      "type": "npcDialog",
+      "position": {
+        "x": 100,
+        "y": 100
+      },
+      "data": {
+        "text": "I have a quest for you, brave adventurer!",
+        "speaker": "Quest Master",
+        "conditions": [
+          {
+            "variable": "playerLevel",
+            "operator": ">=",
+            "value": 5,
+            "description": "Player must be at least level 5"
+          },
+          {
+            "variable": "hasCompletedTutorial",
+            "operator": "==",
+            "value": true
+          }
+        ],
+        "effects": [
+          {
+            "variable": "questsOffered",
+            "operator": "+=",
+            "value": 1
+          }
+        ],
+        "tags": [
+          "quest",
+          "important",
+          "npc"
+        ]
+      }
+    },
+    {
+      "id": "choiceNode_acceptQuest",
+      "type": "choiceNode",
+      "position": {
+        "x": 400,
+        "y": 50
+      },
+      "data": {
+        "text": "Will you accept this quest?",
+        "conditions": [],
+        "effects": [],
+        "tags": [
+          "choice",
+          "quest"
+        ]
+      }
+    },
+    {
+      "id": "playerResponse_accept",
+      "type": "playerResponse",
+      "position": {
+        "x": 700,
+        "y": 0
+      },
+      "data": {
+        "text": "Yes, I accept the quest!",
+        "conditions": [],
+        "effects": [
+          {
+            "variable": "activeQuests",
+            "operator": "+=",
+            "value": 1
+          },
+          {
+            "variable": "questAccepted_tutorial",
+            "operator": "set",
+            "value": true
+          }
+        ],
+        "tags": [
+          "accept",
+          "eager"
+        ]
+      }
+    },
+    {
+      "id": "playerResponse_decline",
+      "type": "playerResponse",
+      "position": {
+        "x": 700,
+        "y": 100
+      },
+      "data": {
+        "text": "I'm not ready for this quest yet.",
+        "conditions": [],
+        "effects": [
+          {
+            "variable": "questsDeclined",
+            "operator": "+=",
+            "value": 1
+          }
+        ],
+        "tags": [
+          "decline",
+          "cautious"
+        ]
+      }
+    },
+    {
+      "id": "npcDialog_questAccepted",
+      "type": "npcDialog",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "data": {
+        "text": "Excellent! Go to the ancient forest and retrieve the crystal.",
+        "speaker": "Quest Master",
+        "conditions": [],
+        "effects": [],
+        "tags": [
+          "quest",
+          "instructions"
+        ]
+      }
+    },
+    {
+      "id": "npcDialog_questDeclined",
+      "type": "npcDialog",
+      "position": {
+        "x": 1000,
+        "y": 100
+      },
+      "data": {
+        "text": "Come back when you feel more prepared.",
+        "speaker": "Quest Master",
+        "conditions": [],
+        "effects": [],
+        "tags": [
+          "quest",
+          "understanding"
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_quest_choice",
+      "source": "npcDialog_questGiver",
+      "target": "choiceNode_acceptQuest",
+      "type": "default"
+    },
+    {
+      "id": "edge_choice_accept",
+      "source": "choiceNode_acceptQuest",
+      "target": "playerResponse_accept",
+      "label": "Accept",
+      "animated": true
+    },
+    {
+      "id": "edge_choice_decline",
+      "source": "choiceNode_acceptQuest",
+      "target": "playerResponse_decline",
+      "label": "Decline"
+    },
+    {
+      "id": "edge_accept_accepted",
+      "source": "playerResponse_accept",
+      "target": "npcDialog_questAccepted",
+      "type": "default"
+    },
+    {
+      "id": "edge_decline_declined",
+      "source": "playerResponse_decline",
+      "target": "npcDialog_questDeclined",
+      "type": "default"
+    }
+  ],
+  "tags": [
+    {
+      "id": "tag_quest_master",
+      "label": "Quest Master",
+      "type": "character",
+      "content": "An experienced adventurer who now gives quests to newcomers",
+      "metadata": {
+        "importance": 5,
+        "description": "Key NPC for quest system",
+        "color": "#ff6b35"
+      }
+    },
+    {
+      "id": "tag_ancient_forest",
+      "label": "Ancient Forest",
+      "type": "location",
+      "content": "A mysterious forest where ancient magic still flows",
+      "metadata": {
+        "importance": 4,
+        "description": "Primary quest location",
+        "color": "#2ecc71"
+      }
+    },
+    {
+      "id": "tag_crystal_artifact",
+      "label": "Magic Crystal",
+      "type": "item",
+      "content": "A powerful artifact hidden deep within the ancient forest",
+      "metadata": {
+        "importance": 5,
+        "description": "Quest objective item",
+        "color": "#9b59b6"
+      }
+    }
+  ],
+  "metadata": {
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "lastModified": "2024-01-01T12:00:00.000Z",
+    "projectType": "game",
+    "description": "Complex quest dialog with branching choices and conditions"
+  }
+}

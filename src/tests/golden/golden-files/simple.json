@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "2.0.0",
+  "nodes": [
+    {
+      "id": "npcDialog_welcome",
+      "type": "npcDialog",
+      "position": {
+        "x": 100,
+        "y": 100
+      },
+      "data": {
+        "text": "Welcome to our village!",
+        "speaker": "Village Guard",
+        "conditions": [],
+        "effects": [],
+        "tags": [
+          "intro",
+          "village"
+        ]
+      }
+    },
+    {
+      "id": "playerResponse_thanks",
+      "type": "playerResponse",
+      "position": {
+        "x": 300,
+        "y": 100
+      },
+      "data": {
+        "text": "Thank you for the welcome!",
+        "conditions": [],
+        "effects": [],
+        "tags": [
+          "polite"
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_welcome_thanks",
+      "source": "npcDialog_welcome",
+      "target": "playerResponse_thanks",
+      "type": "default"
+    }
+  ],
+  "tags": [
+    {
+      "id": "tag_village_guard",
+      "label": "Village Guard",
+      "type": "character",
+      "content": "The friendly guard at the village entrance",
+      "metadata": {
+        "importance": 3,
+        "color": "#4a90e2"
+      }
+    }
+  ]
+}

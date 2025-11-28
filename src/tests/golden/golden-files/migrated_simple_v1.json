@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "2.0.0",
+  "nodes": [
+    {
+      "id": "npcDialog_oldnpc1cdef",
+      "type": "npcDialog",
+      "position": {
+        "x": 100,
+        "y": 100
+      },
+      "data": {
+        "text": "Hello from V1!",
+        "speaker": "Old NPC",
+        "conditions": [],
+        "effects": [],
+        "tags": [],
+        "metadata": {
+          "tags": [],
+          "nodeData": {}
+        },
+        "style": {}
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "playerResponse_oldplayer17654",
+      "type": "playerResponse",
+      "position": {
+        "x": 300,
+        "y": 100
+      },
+      "data": {
+        "text": "Player response",
+        "conditions": [],
+        "effects": [],
+        "tags": [],
+        "metadata": {
+          "tags": [],
+          "nodeData": {}
+        },
+        "style": {}
+      },
+      "selected": false,
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "old_edge_1",
+      "source": "npcDialog_oldnpc1cdef",
+      "target": "playerResponse_oldplayer17654",
+      "type": "default",
+      "animated": false
+    }
+  ],
+  "tags": [
+    {
+      "id": "old_tag_1",
+      "label": "Old Character",
+      "type": "character",
+      "content": "A character from V1",
+      "metadata": {
+        "importance": 3,
+        "color": "#ff0000",
+        "references": []
+      }
+    }
+  ],
+  "metadata": {
+    "createdAt": "2025-08-11T14:56:03.855Z",
+    "lastModified": "2025-08-11T14:56:03.855Z",
+    "projectType": "game",
+    "title": "Migrated Project",
+    "totalNodes": 2,
+    "totalEdges": 1
+  }
+}

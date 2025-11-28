@@ -1,0 +1,83 @@
+{
+  "nodes": [
+    {
+      "id": "node-1",
+      "type": "npc",
+      "text": "YOU DON'T LOOK LIKE YOU'RE FROM AROUND HERE.",
+      "position": { "x": 0, "y": 0 }
+    },
+    {
+      "id": "node-2",
+      "type": "player",
+      "text": "I'VE LIVED HERE ALL MY LIFE!",
+      "position": { "x": 400, "y": -100 }
+    },
+    {
+      "id": "node-3",
+      "type": "player",
+      "text": "I CAME HERE FROM NEWTON.",
+      "position": { "x": 400, "y": 100 }
+    },
+    {
+      "id": "node-4",
+      "type": "npc",
+      "text": "Oh really? Then you must know Mr. Bowler.",
+      "position": { "x": 800, "y": -100 }
+    },
+    {
+      "id": "node-5",
+      "type": "npc",
+      "text": "Newton, eh? I heard there's trouble brewing down there.",
+      "position": { "x": 800, "y": 100 }
+    },
+    {
+      "id": "node-6",
+      "type": "player",
+      "text": "Mr. Bowler is a good friend of mine!",
+      "position": { "x": 1200, "y": -200 }
+    },
+    {
+      "id": "node-7",
+      "type": "player",
+      "text": "Who?",
+      "position": { "x": 1200, "y": 0 }
+    },
+    {
+      "id": "node-8",
+      "type": "player",
+      "text": "I haven't heard about any trouble.",
+      "position": { "x": 1200, "y": 100 }
+    },
+    {
+      "id": "node-9",
+      "type": "player",
+      "text": "Did I say Newton? I'm actually from Springville.",
+      "position": { "x": 1200, "y": 200 }
+    },
+    {
+      "id": "node-10",
+      "type": "npc",
+      "text": "You liar! There ain't no Mr. Bowler, I made him up!",
+      "position": { "x": 1600, "y": -100 }
+    },
+    {
+      "id": "node-11",
+      "type": "npc",
+      "text": "Don't you worry about it. Say, let's have something to eat? I'm starving.",
+      "position": { "x": 1600, "y": 150 }
+    }
+  ],
+  "connections": [
+    { "id": "conn-1", "sourceId": "node-1", "targetId": "node-2" },
+    { "id": "conn-2", "sourceId": "node-1", "targetId": "node-3" },
+    { "id": "conn-3", "sourceId": "node-2", "targetId": "node-4" },
+    { "id": "conn-4", "sourceId": "node-3", "targetId": "node-5" },
+    { "id": "conn-5", "sourceId": "node-4", "targetId": "node-6" },
+    { "id": "conn-6", "sourceId": "node-4", "targetId": "node-7" },
+    { "id": "conn-7", "sourceId": "node-5", "targetId": "node-8" },
+    { "id": "conn-8", "sourceId": "node-5", "targetId": "node-9" },
+    { "id": "conn-9", "sourceId": "node-6", "targetId": "node-10" },
+    { "id": "conn-10", "sourceId": "node-8", "targetId": "node-11" },
+    { "id": "conn-11", "sourceId": "node-9", "targetId": "node-11" }
+  ]
+}

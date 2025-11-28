@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "2.0.0",
+  "nodes": [
+    {
+      "id": "npcDialog_legacynodeXYZa",
+      "type": "npcDialog",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "text": "Legacy format without data wrapper",
+        "conditions": [],
+        "effects": [],
+        "tags": [],
+        "metadata": {
+          "tags": [],
+          "nodeData": {}
+        },
+        "style": {}
+      },
+      "selected": false,
+      "dragging": false
+    }
+  ],
+  "edges": [],
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-08-11T14:56:03.855Z",
+    "lastModified": "2025-08-11T14:56:03.855Z",
+    "projectType": "game",
+    "title": "Migrated Project",
+    "totalNodes": 1,
+    "totalEdges": 0
+  }
+}

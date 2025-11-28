@@ -1,0 +1,12 @@
+{
+  "isValid": false,
+  "errorCount": 2,
+  "warningCount": 1,
+  "errorTypes": [
+    "INVALID_NODE_ID_FORMAT",
+    "EDGE_TARGET_MISSING"
+  ],
+  "warningTypes": [
+    "ORPHANED_NODES"
+  ]
+}

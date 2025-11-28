@@ -1,0 +1,86 @@
+.node-wrapper {
+  transition: all 0.2s ease-in-out;
+}
+
+.node-has-issue > div {
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: inherit;
+}
+
+/* PHASE 2.3: Static CSS classes to replace dynamic inline styles */
+.node-issue-accent {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 4px;
+  height: calc(100% - 12px);
+  background: #EF4444;
+  border-radius: 2px 0 0 2px;
+  z-index: 10;
+  opacity: 0.9;
+}
+
+.node-issue-indicator {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  z-index: 50;
+  font-size: 20px;
+}
+
+.node-processing-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.node-processing-bar-container {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 20px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  overflow: hidden;
+  z-index: 35;
+}
+
+.node-processing-bar {
+  width: 40%;
+  height: 100%;
+  border-radius: 9999px;
+  animation: indeterminate 1.2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.node-header-container {
+  position: relative;
+  z-index: 40;
+}

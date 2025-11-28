@@ -1,0 +1,198 @@
+:root {
+  --z-viewport-background: 0;
+  --z-viewport-grid: 1;
+  --z-viewport-minimap: 350;
+  
+  /* Nodes and connections */
+  --z-connection-default: 5;
+  --z-connection-selected: 10;
+  --z-connection-highlighted: 8;
+  --z-connection-bundled: 7;
+  --z-connection-animated: 9;
+  
+  --z-node-default: 10;
+  --z-node-selected: 15;
+  --z-node-hovered: 15;
+  --z-node-dragging: 20;
+  --z-node-outline: 9;
+  --z-node-processing: 18;
+  
+  /* Node internals */
+  --z-node-handle: 20;
+  --z-node-toolbar: 30;
+  --z-node-resizer: 25;
+  --z-node-label: 15;
+  
+  /* UI Panels */
+  --z-left-panel: 200;
+  --z-right-panel: 200;
+  --z-bottom-panel: 200;
+  --z-panel-header: 210;
+  --z-panel-content: 210;
+  --z-panel-scroll: 205;
+  
+  /* Toolbar and controls */
+  --z-main-toolbar: 100;
+  --z-toolbar-button: 110;
+  --z-toolbar-dropdown: 120;
+  --z-search-bar: 130;
+  
+  --z-viewport-controls: 300;
+  --z-zoom-controls: 310;
+  --z-layout-controls: 305;
+  
+  /* Floating UI elements */
+  --z-floating-button: 400;
+  --z-floating-panel: 410;
+  --z-node-selector: 420;
+  --z-connection-menu: 430;
+  
+  /* Interactive overlays */
+  --z-tooltip: 500;
+  --z-tooltip-arrow: 501;
+  --z-popover: 510;
+  
+  --z-toast-notification: 600;
+  --z-status-indicator: 610;
+  --z-progress-bar: 605;
+  
+  /* Dropdowns and menus */
+  --z-dropdown-menu: 3000;
+  --z-dropdown-item: 3001;
+  --z-context-menu: 4000;
+  --z-context-menu-item: 4001;
+  
+  /* Modal system */
+  --z-modal-backdrop: 2000;
+  --z-modal-container: 2100;
+  --z-modal-header: 2110;
+  --z-modal-body: 2105;
+  --z-modal-footer: 2108;
+  --z-modal-close-button: 2115;
+  
+  /* Settings and configuration */
+  --z-settings-modal: 2200;
+  --z-tag-manager: 2150;
+  
+  /* Development and debugging */
+  --z-performance-dashboard: 12000;
+  --z-error-boundary: 11000;
+  --z-loading-screen: 10000;
+  --z-development-tools: 12100;
+}
+
+/* Utility classes for common z-index patterns */
+.z-background {
+  z-index: var(--z-viewport-background);
+}
+
+.z-content {
+  z-index: var(--z-node-default);
+}
+
+.z-ui {
+  z-index: var(--z-main-toolbar);
+}
+
+.z-overlay {
+  z-index: var(--z-modal-backdrop);
+}
+
+.z-critical {
+  z-index: var(--z-loading-screen);
+}
+
+/* Interactive state utilities */
+.z-interactive {
+  transition: z-index 0.2s ease;
+}
+
+.z-interactive:hover {
+  z-index: calc(var(--z-node-default) + 1);
+}
+
+.z-interactive:active {
+  z-index: calc(var(--z-node-default) + 2);
+}
+
+.z-interactive:focus-visible {
+  z-index: calc(var(--z-node-default) + 1);
+}
+
+/* Stacking context utilities */
+.z-stack-context {
+  position: relative;
+  z-index: 0;
+}
+
+/* Layer-specific utilities */
+.z-canvas-layer {
+  z-index: var(--z-viewport-background);
+}
+
+.z-content-layer {
+  z-index: var(--z-node-default);
+}
+
+.z-ui-layer {
+  z-index: var(--z-main-toolbar);
+}
+
+.z-overlay-layer {
+  z-index: var(--z-modal-backdrop);
+}
+
+.z-critical-layer {
+  z-index: var(--z-loading-screen);
+}
+
+/* Specific component utilities */
+.z-node {
+  z-index: var(--z-node-default);
+}
+
+.z-node-selected {
+  z-index: var(--z-node-selected);
+}
+
+.z-node-dragging {
+  z-index: var(--z-node-dragging);
+}
+
+.z-connection {
+  z-index: var(--z-connection-default);
+}
+
+.z-connection-selected {
+  z-index: var(--z-connection-selected);
+}
+
+.z-panel {
+  z-index: var(--z-left-panel);
+}
+
+.z-toolbar {
+  z-index: var(--z-main-toolbar);
+}
+
+.z-modal {
+  z-index: var(--z-modal-container);
+}
+
+.z-tooltip {
+  z-index: var(--z-tooltip);
+}
+
+.z-dropdown {
+  z-index: var(--z-dropdown-menu);
+}
+
+/* Performance optimizations */
+.z-will-change {
+  will-change: z-index;
+}
+
+.z-gpu-layer {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
